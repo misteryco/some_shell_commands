@@ -1,4 +1,10 @@
-DB_NAME="some_name"
+APP_NAME="some-name"
+DUMP_FILE="db_$(date +%F).dump"
 
-echo "Fetching the latest database dump..."
-curl -o "db_$(date +%F).dump" "$(heroku pg:backups:url --app app_name)"
+echo "✅ Fetching latest database dump from Heroku app: $APP_NAME"
+echo "--------------------------------------"
+
+curl -o "$DUMP_FILE" "$(heroku pg:backups:url --app "$APP_NAME")"
+
+echo "--------------------------------------"
+echo "📦 Output file: $DUMP_FILE"
