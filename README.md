@@ -4,9 +4,9 @@ This repository contains a collection of useful database shell commands . These 
 
 ## Features
 
-- A set of commonly used DB shell commands for popular DBMS like MySQL, PostgreSQL, MongoDB, etc.
+- A set of commonly used DB shell commands.
 - Easy to modify and extend for your own needs.
-- Organized by database type to make it easier to find the commands you need.
+
 ## Installation
 
 1. Clone the repository:
