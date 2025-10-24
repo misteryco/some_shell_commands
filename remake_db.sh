@@ -9,6 +9,7 @@ then
   exit 1
 fi
 
+echo "Run docker db container"
 docker compose up db -d
 
 docker compose run db psql "postgres://$DB_USERNAME:$DB_PASSWORD@db:$DB_PORT/" -c "DROP DATABASE IF EXISTS $DB_NAME;"
@@ -16,6 +17,7 @@ docker compose run db psql "postgres://$DB_USERNAME:$DB_PASSWORD@db:$DB_PORT/" -
 
 docker exec -i "$(docker compose ps -q db)" pg_restore --clean --no-acl --no-owner -U "$DB_USERNAME" -d "$DB_NAME" < "$1"
 
+echo "Migrate DB"
 docker compose run django python manage.py migrate
 docker compose run -T django python manage.py shell < remakedb_pythondata.py
 
