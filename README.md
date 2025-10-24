@@ -11,4 +11,4 @@ This repository contains a collection of useful database shell commands . These 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/db-shell-commands.git
+   git clone [https://github.com/misteryco/some_shell_commands]
